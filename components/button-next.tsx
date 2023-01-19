@@ -1,27 +1,28 @@
 import type { NextPage } from "next";
 
 interface IProps {
-  disabled: boolean;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
 const ButtonNext: NextPage<IProps> = (props: IProps) => {
   return (
     <button
+      disabled={props.disabled}
       onClick={props.onClick}
       className="relative rounded-[50%] border-0 w-[140px] h-[140px] bg-transparent p-0"
     >
       {!props.disabled && (
         <img
           className="absolute top-[0px] left-[0px] w-[100%] h-[100%]"
-          alt=""
+          alt="../property-1default.svg"
           src="../property-1default.svg"
         />
       )}
       {props.disabled && (
         <img
           className="absolute top-[0px] left-[0px] w-[100%] h-[100%]"
-          alt=""
+          alt="../property-1disabled.svg"
           src="../property-1disabled.svg"
         />
       )}

@@ -1,22 +1,30 @@
 import React from "react";
-import Head from "next/head";
-
+import {
+  createBrowserSupabaseClient,
+  Session,
+} from "@supabase/auth-helpers-nextjs";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import type { AppProps } from "next/app";
-import "./global.css";
+import { useState } from "react";
+import "../styles/global.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({
+  Component,
+  pageProps,
+}: AppProps<{
+  initialSession: Session;
+}>) {
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
+
   return (
-    <React.Fragment>
-      <Head>
-        <title>First</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
-
-      <Component {...pageProps} />
-    </React.Fragment>
+    <SessionContextProvider
+      supabaseClient={supabaseClient}
+      initialSession={pageProps.initialSession}
+    >
+      <React.Fragment>
+        <Component {...pageProps} />
+      </React.Fragment>
+    </SessionContextProvider>
   );
 }
 
