@@ -9,10 +9,10 @@ const Welcome: NextPage = () => {
 
   return (
     <Layout>
-      <div className="w-full h-full flex  flex-col py-0 px-5 box-border items-center justify-between text-center text-base text-light-grey-8001 font-body-date1">
-        <div className="rounded-3xl p-[2px]  shadow-sm w-full h-full flex-2 bg-gradient-to-t from-[#9747FF]  via-[#26F4DE] to-[#1f1f1f]">
-          <div className="relative rounded-3xl justify-between bg-[#1f1f1f] [background:black shadow-[0px_12px_40px_rgba(0,_0,_0,_0.5)] w-full h-full flex flex-col pt-[42px] px-5 pb-[92px] box-border items-center  gap-[32px]">
-            <div className="self-stretch h-full flex flex-col items-center justify-center gap-[32px] z-[0]">
+      <div className="flex-1 w-full h-full flex  flex-col py-0 px-5 box-border items-center justify-between text-center text-base text-light-grey-8001 font-body-date1">
+        <div className="flex-1 flex flex-col rounded-3xl p-[2px]  shadow-sm w-full h-full bg-gradient-to-t from-[#9747FF]  via-[#26F4DE] to-[#1f1f1f]">
+          <div className="flex-1 relative rounded-3xl justify-between bg-[#1f1f1f] [background:black shadow-[0px_12px_40px_rgba(0,_0,_0,_0.5)] w-full h-full flex flex-col pt-[42px] px-5 pb-[92px] box-border items-center  gap-[32px]">
+            <div className="flex-1 self-stretch h-full flex flex-col items-center justify-center gap-[32px] z-[0]">
               <b className="self-stretch  text-[32px] leading-[40px]">
                 Welcome !
               </b>
