@@ -2,7 +2,7 @@ import supabase from "./supabase";
 
 export async function signInWithDiscord() {
   const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "github",
+    provider: "discord",
   });
 }
 
